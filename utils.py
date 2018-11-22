@@ -649,6 +649,8 @@ def create_system_controller_config(filename):
 
 
 def create_static_config():
+    #SM:added
+    return
     cmd = ["/usr/bin/sysinv-puppet",
            "create-static-config",
            constants.HIERADATA_WORKDIR]
