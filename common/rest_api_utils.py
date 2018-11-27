@@ -93,7 +93,7 @@ def get_token(auth_url, auth_project, auth_user, auth_password,
                         "domain": {"name": project_domain}
                     }}}})
 
-        LOG.info("OpenStack Keystone Creds, get_token payload:%s" % payload)
+        LOG.info("#SM: OpenStack Keystone Creds, get_token payload:%s" % payload)
         request_info.add_data(payload)
 
         request = urllib2.urlopen(request_info)

@@ -59,7 +59,7 @@ class OpenStack(object):
     def __enter__(self):
         if not self._connect():
             raise Exception('Failed to connect')
-        LOG.info("#SM: OpenStack Keystone Creds, _token_id:%s" % self.self.admin_token.get_id())
+        LOG.info("#SM: OpenStack Keystone Creds, _token_id:%s" % self.admin_token.get_id())
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
