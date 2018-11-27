@@ -35,6 +35,7 @@ def rest_api_request(token, method, api_cmd, api_cmd_headers=None,
             request_info.add_header("Content-type", "application/json")
             request_info.add_data(api_cmd_payload)
 
+        LOG.info("#SM: rest_api_request, creds:%s" % vars(request_info))
         request = urllib2.urlopen(request_info)
         response = request.read()
 

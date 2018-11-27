@@ -59,7 +59,7 @@ class OpenStack(object):
     def __enter__(self):
         if not self._connect():
             raise Exception('Failed to connect')
-        LOG.info("OpenStack Keystone Creds, _token_id:%s" % self.self.admin_token.get_id())
+        LOG.info("#SM: OpenStack Keystone Creds, _token_id:%s" % self.self.admin_token.get_id())
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
@@ -70,7 +70,7 @@ class OpenStack(object):
 
     def _connect(self):
         """ Connect to an OpenStack instance """
-        LOG.info("OpenStack Keystone Creds, conf:%s" % self.conf)
+        LOG.info("#SM: OpenStack Keystone Creds, conf:%s" % self.conf)
         if self.admin_token is not None:
             self._disconnect()
 
@@ -277,7 +277,7 @@ class OpenStack(object):
 
             endpoint = self.admin_token.get_service_url(
                 self.conf['region_name'], "sysinv", "platform", 'admin')
-            LOG.info("OpenStack Keystone, sysinv endpoint:%s" % endpoint)
+            LOG.info("#SM: OpenStack Keystone, sysinv endpoint:%s" % endpoint)
             self._sysinv = cgts_client.Client(
                 sysinv.API_VERSION,
                 endpoint=endpoint,
