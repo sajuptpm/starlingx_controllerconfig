@@ -69,7 +69,7 @@ class OpenStack(object):
 
     def _connect(self):
         """ Connect to an OpenStack instance """
-
+        LOG.info("OpenStack Keystone Creds, conf:%s, admin_token:%s" % (self.conf, self.admin_token))
         if self.admin_token is not None:
             self._disconnect()
 
